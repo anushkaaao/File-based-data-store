@@ -1,0 +1,58 @@
+<h1>{{session["username"]}}</h1>
+<br>
+<Div style=" max-width: 80rem; margin: auto; margin-bottom: 5vh; background-color: rgb(65, 43, 43); color: antiquewhite; box-shadow: 0 20px 30px 0 rgba(1, 24, 24, 0.3);
+    padding: 10px;
+    border: inherit;
+    border-radius: 5px;" class="heading">
+ <h3 style="padding-top: 3vh; padding-bottom: 3vh; text-align: center; font-family: monospace;" > Home Page </h3>
+</Div>
+<div style="width: 100%;
+    height: auto;
+    max-width: 70rem;
+    margin: auto; border: 3px solid rgb(29, 25, 25); border-radius: 15px;
+box-shadow: 0 20px 30px 0 rgba(23, 121, 121, 0.3);">
+
+
+
+
+<form style="padding: 15px 15px 15px 15px;" action="/upload" method="POST" enctype="multipart/form-data">
+  <div class="form-group">
+      <label for="exampleInputPassword1">Key</label>
+      <input type="username" class="form-control"name="key" placeholder="Key" required="true">
+    </div>
+    <br>
+<div class="form-group">
+      <label for="exampleInputPassword1">URL</label>
+      <input type="file" class="form-control" name="url" placeholder="File" required="true">
+    </div>
+    <br>
+  <label for="exampleInputPassword1">Expiration Time</label>
+<input type="date" name="expTime" required="true">
+    <br> <br>
+<button type="submit">Upload</button>
+</form>
+
+
+<form style="padding: 15px 15px 15px 15px;" method="POST"  action="/read">
+	<input type="text" name="key" placeholder="Enter key to read a file" required="true">
+	<button type="submit">Read</button>
+</form>
+
+
+
+<form style="padding: 15px 15px 15px 15px;" method="POST"  action="/delete">
+	<input type="text" name="key" placeholder="Enter key to delete a file" required="true">
+	<button type="submit">Delete</button>
+</form>
+
+<a style="padding: 15px 15px 15px 15px; text-align: left; font-family: monospace;" href={{url_for('logout')}} >Log-Out</a>
+<br><br>
+
+</div>
+
+<h3>Your files: </h3>
+
+{% for i in user_files %}
+	{{i.key}} - {{i.fileURL}}
+	<br>
+{% endfor %}

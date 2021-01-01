@@ -1,0 +1,11 @@
+<h1>Users: </h1>
+{% for  i in all_user %}
+	{{i.username}} - {{i.password}}
+	<br>
+{%endfor%}
+
+<h1>Files: </h1>
+{% for  i in all_files %}
+ {{i.key}} - {{i.fileURL}} ~ by {{i.username}}
+ <br>
+{%endfor%}
