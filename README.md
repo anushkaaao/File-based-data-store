@@ -12,5 +12,4 @@
 #### 5. Admin Panel
 
 ### To install dependencies, go to your terminal and type:
-<br>
 #### pip install -r requirements.txt
