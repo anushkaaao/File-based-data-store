@@ -10,3 +10,7 @@
 #### 3. File Deletion
 #### 4. Reading file as a JSON object
 #### 5. Admin Panel
+
+### To install dependencies, go to your terminal and type:
+<br>
+#### pip install -r requirements.txt
