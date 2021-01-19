@@ -1,4 +1,4 @@
-## Freshworks-File-based-data-store
+## File-based-data-store
 ### How to setup:
 #### 1. Install Python
 #### 2. Install Flask
